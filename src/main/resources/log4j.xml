@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration threshold="all" debug="false"
+	xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- Configuration of Log4J logging. -->
+
+	<!-- Conslole output -->
+	<appender name="CON" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- file output for everything -->
+	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="log.log" />
+		<param name="Append" value="true" />
+		<param name="Threshold" value="info" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="MaxFileSize" value="250MB" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c: %m%n" />
+		</layout>
+	</appender>
+
+	<!-- file output for errors only -->
+	<appender name="FERROR" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="log-errors.log" />
+		<param name="Append" value="true" />
+		<param name="Threshold" value="ERROR" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="MaxFileSize" value="100MB" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c: %m%n" />
+		</layout>
+	</appender>
+
+	<!-- Disable extra logging by external libaries even in debug mode. -->
+	<category name="org.apache">
+		<priority value="ERROR" />
+	</category>
+
+	<!-- awr logging -->
+	<category name="lib.awr">
+		<priority value="INFO" />
+	</category>
+
+	<!-- Root logger -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="CON" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="FERROR" />
+	</root>
+</log4j:configuration>

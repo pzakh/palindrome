@@ -1,1 +1,2 @@
 # palindrome
+Install guide
