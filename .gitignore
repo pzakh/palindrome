@@ -1,0 +1,9 @@
+/target
+/build
+/out
+.idea
+.settings
+.classpath
+.project
+log.log
+log-errors.log
