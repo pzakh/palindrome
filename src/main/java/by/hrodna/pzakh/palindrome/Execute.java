@@ -26,7 +26,7 @@ public class Execute {
             log.error("Input string is not type of int");
             System.exit(0);
         }
-        Palindrome palindromeObject = new Palindrome(Integer.valueOf(args[0]));
-        palindromeObject.getResult();
+        Palindrome palindromeObject = new Palindrome();
+        palindromeObject.getResult(Integer.valueOf(args[0]));
     }
 }

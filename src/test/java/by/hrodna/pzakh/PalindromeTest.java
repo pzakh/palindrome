@@ -11,8 +11,8 @@ import static junit.framework.TestCase.assertEquals;
 public class PalindromeTest {
     @Test
     public void calculate(){
-        Palindrome palindromeObject = new Palindrome(2);
-        String actual = palindromeObject.getResult();
+        Palindrome palindromeObject = new Palindrome();
+        String actual = palindromeObject.getResult(2);
         int expected = 9009;
         assertEquals("adding 9009", expected, actual);
     }

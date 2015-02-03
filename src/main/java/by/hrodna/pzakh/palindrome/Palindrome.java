@@ -12,11 +12,11 @@ public class Palindrome {
     static final Log log = LogFactory.getLog(Palindrome.class);
     private int n;
 
-    public Palindrome(int n) {
+   /* public Palindrome(int n) {
         this.n = n;
-    }
+    }*/
 
-    public String getResult() {
+    public String getResult(int n) {
         String result = findMax(n);
         return result;
     }
