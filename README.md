@@ -1,4 +1,4 @@
-# palindrome
+# Palindrome search
 ## Install guide
 ### Project build
 * For building project you need run "build.bat".
