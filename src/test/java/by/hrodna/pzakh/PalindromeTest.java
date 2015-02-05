@@ -12,8 +12,8 @@ public class PalindromeTest {
     @Test
     public void calculate(){
         Palindrome palindromeObject = new Palindrome();
-        String actual = palindromeObject.getResult(2);
-        int expected = 9009;
+        long actual = palindromeObject.getResult(3);
+        int expected = 906609;
         assertEquals("adding 9009", expected, actual);
     }
 }
